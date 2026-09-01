@@ -5,6 +5,7 @@ public class printPattern {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.print("x ");
+                // space = space - 2;
             }
             System.out.println("");
         }
@@ -84,8 +85,99 @@ public class printPattern {
         
     }
 
+   
+    // pattern 8
+    public static void printReverseTriangleStar(int n) {
+        for (int i=0; i<n; i++) {
+            // space
+            for (int j=0; j<i; j++) {
+                System.out.print( " ");
+            }
+            // star
+            for (int j=0; j< 2*n - (2*i + 1); j++) {
+                System.out.print("*");
+            }
+            //space
+            for (int j=0; j<i; j++) {
+                System.out.print( " ");
+            }
+            System.out.println("");
+        }
+    }
 
-    public static void main(String[] args) {
+    // pattern 10
+    public static void printSideTriangleStar(int n) {
+        for (int i=1; i<= 2*n-1; i++) {
+            int stars = i;
+            if (i > n ) stars = 2*n - i; 
+            for (int j=1; j<= stars; j++) {
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+    }
+
+    // pattern 11
+    public static void RightAngleTriangleWithZeroAndOne(int n) {
+        int start = 1;
+        for (int i=0; i<n; i++) {
+            if (i % 2 == 0) { 
+                start = 1; 
+            } else {
+                start = 0;
+            }
+ 
+            for (int j=0; j<=i; j++) {
+                System.out.print(start);
+                start = 1- start;
+            }
+
+            System.out.println("");
+        }
+    }
+    
+    // pattern 12
+    public static void pattern12(int n) {
+        int space = 2 * (n -1);
+
+        for (int i=1; i<=n; i++) {
+            // number 
+            for (int j=1; j<=i; j++) {
+                System.out.print(j);
+            }
+
+            // space
+            for (int j=1; j<=space; j++) {
+                System.out.print(" ");
+                
+            }
+
+            // number
+            for (int j=i; j>=1; j--) {
+                System.out.print(j);
+            }
+
+            System.out.println("");
+            space -= 2;
+        }
+    }
+    
+
+    // pattern 13
+    public static void pattern13(int n) {
+        int num = 1;
+        for (int i=1; i<=n; i++) {
+
+            for (int j=1; j<=i; j++) {
+                System.out.print(num + " ");
+                num +=1;
+            }
+
+            System.out.println("");
+        }
+    }
+    
+    public static void main(String[] args) { 
         
         // squarePattern(5);
         // rightTrianglePattern(5);
@@ -93,6 +185,11 @@ public class printPattern {
         // rightTrianglePatternRow(5);
         // reverseRightTriangle(5);
         // reverseRightTriangleNumber(5);
-        printTriangleStar(5);
+        // printTriangleStar(5);
+        // printReverseTriangleStar(5);
+        // printSideTriangleStar(5);
+        // RightAngleTriangleWithZeroAndOne(5);
+        // pattern12(4);
+        pattern13(5);
     }
 }
